@@ -1,12 +1,9 @@
 function removeZeros(nums) {
-    // for (let i = nums.length - 1; i >= 0; i--) 
-    nums.map(function(i) {
-        if (nums[i] === 0) {
-            nums.splice(i, 1);
-            nums.push(0);
-        }
-    })
-    return nums;
+    let zeroIsTrue = nums.filter((item) => item === 0);
+    let zeroIsFalse = nums.filter((item) => item !== 0);
+    let result = zeroIsFalse.concat(zeroIsTrue);
+    return result;
+
 }
 
 console.log(removeZeros([1, 0, 1, 2, 0, 1, 3]));
